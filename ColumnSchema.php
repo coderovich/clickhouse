@@ -62,6 +62,9 @@ class ColumnSchema extends BaseColumnSchema
                     // ensure type cast always has . as decimal separator in all locales
                     return StringHelper::floatToString($value);
                 }
+                if (is_array($value)) {
+                  return $value;
+                }
                 return (string) $value;
             case 'integer':
                 return (int) $value;
