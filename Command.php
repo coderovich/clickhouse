@@ -2,7 +2,7 @@
 
 namespace coderovich\clickhouse;
 
-use kak\clickhouse\httpclient\Request;
+use coderovich\clickhouse\httpclient\Request;
 use Yii;
 use yii\base\Exception;
 use yii\db\Command as BaseCommand;
@@ -12,8 +12,8 @@ use yii\helpers\Json;
 
 /**
  * Class Command
- * @package kak\clickhouse
- * @property $db \kak\clickhouse\Connection
+ * @package coderovich\clickhouse
+ * @property $db \coderovich\clickhouse\Connection
  */
 class Command extends BaseCommand
 {
@@ -226,7 +226,7 @@ class Command extends BaseCommand
         if ($this->getFormat() === null && strpos($rawSql, 'FORMAT ') === false) {
             $rawSql .= ' FORMAT JSON';
         }
-        \Yii::info($rawSql, 'kak\clickhouse\Command::query');
+        \Yii::info($rawSql, 'coderovich\clickhouse\Command::query');
 
         if ($method !== '') {
             $info = $this->db->getQueryCacheInfo($this->queryCacheDuration, $this->queryCacheDependency);
@@ -243,7 +243,7 @@ class Command extends BaseCommand
                 ];
                 $result = $cache->get($cacheKey);
                 if (is_array($result) && isset($result[0])) {
-                    Yii::trace('Query result served from cache', 'kak\clickhouse\Command::query');
+                    Yii::trace('Query result served from cache', 'coderovich\clickhouse\Command::query');
                     return $this->prepareResult($result[0], $method, $fetchMode);
                 }
             }
@@ -251,7 +251,7 @@ class Command extends BaseCommand
         
         $token = $rawSql;
         try {
-            Yii::beginProfile($token, 'kak\clickhouse\Command::query');
+            Yii::beginProfile($token, 'coderovich\clickhouse\Command::query');
 
             $response = $this->db->transport
                 ->createRequest()
@@ -265,15 +265,15 @@ class Command extends BaseCommand
             $data = $this->parseResponse($response);
             $result = $this->prepareResult($data, $method, $fetchMode);
 
-            Yii::endProfile($token, 'kak\clickhouse\Command::query');
+            Yii::endProfile($token, 'coderovich\clickhouse\Command::query');
         } catch (\Exception $e) {
-            Yii::endProfile($token, 'kak\clickhouse\Command::query');
+            Yii::endProfile($token, 'coderovich\clickhouse\Command::query');
             throw new Exception("Query error: " . $e->getMessage());
         }
 
         if (isset($cache, $cacheKey, $info)) {
             $cache->set($cacheKey, [$data], $info[1], $info[2]);
-            Yii::trace('Saved query result in cache', 'kak\clickhouse\Command::query');
+            Yii::trace('Saved query result in cache', 'coderovich\clickhouse\Command::query');
         }
 
         return $result;
@@ -535,7 +535,7 @@ class Command extends BaseCommand
      */
     public function batchInsertFiles($table, $columns = null, $files = [], $format = 'CSV')
     {
-        $categoryLog = 'kak\clickhouse\Command::batchInsertFiles';
+        $categoryLog = 'coderovich\clickhouse\Command::batchInsertFiles';
         if ($columns === null) {
             $columns = $this->db->getSchema()->getTableSchema($table)->columnNames;
         }
@@ -578,7 +578,7 @@ class Command extends BaseCommand
      */
     public function batchInsertFilesDataSize($table, $columns = null, $files = [], $format = 'CSV', $size = 10000)
     {
-        $categoryLog = 'kak\clickhouse\Command::batchInsertFilesDataSize';
+        $categoryLog = 'coderovich\clickhouse\Command::batchInsertFilesDataSize';
         if ($columns === null) {
             $columns = $this->db->getSchema()->getTableSchema($table)->columnNames;
         }

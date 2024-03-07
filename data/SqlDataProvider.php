@@ -1,25 +1,25 @@
 <?php
 
-namespace kak\clickhouse\data;
+namespace coderovich\clickhouse\data;
 use yii\db\Expression;
 
 /**
  * Class SqlDataProvider
- * @package kak\clickhouse\data
+ * @package coderovich\clickhouse\data
  */
 class SqlDataProvider extends \yii\data\SqlDataProvider
 {
 
-    /** @var string|\kak\clickhouse\Connection  */
+    /** @var string|\coderovich\clickhouse\Connection  */
     public $db = 'clickhouse';
 
     /**
-     * @var \kak\clickhouse\Command
+     * @var \coderovich\clickhouse\Command
      */
     private $_command;
 
     /**
-     * @return \kak\clickhouse\Command
+     * @return \coderovich\clickhouse\Command
      */
     public function getCommand()
     {

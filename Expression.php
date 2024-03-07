@@ -5,7 +5,7 @@ namespace coderovich\clickhouse;
 
 /**
  * Class Expression
- * @package kak\clickhouse
+ * @package coderovich\clickhouse
  */
 class Expression extends \yii\db\Expression
 {

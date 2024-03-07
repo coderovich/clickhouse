@@ -4,7 +4,7 @@
  */
 
 /* @var $this yii\web\View */
-/* @var $generator \kak\clickhouse\gii\model\Generator */
+/* @var $generator \coderovich\clickhouse\gii\model\Generator */
 /* @var $collectionName string full collection name */
 /* @var $className string class name */
 /* @var $labels string[] list of attribute labels (name => label) */
@@ -35,7 +35,7 @@ class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . 
     }
 
     /**
-    * @return \kak\clickhouse\Connection the ClickHouse connection used by this AR class.
+    * @return \coderovich\clickhouse\Connection the ClickHouse connection used by this AR class.
     */
     public static function getDb()
     {

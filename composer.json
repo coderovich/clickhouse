@@ -26,7 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-            "kak\\clickhouse\\": ""
+            "coderovich\\clickhouse\\": ""
         }
     },
     "config": {

@@ -8,7 +8,7 @@ use yii\db\ActiveRelationTrait;
 
 /**
  * Class ActiveQuery
- * @package kak\clickhouse
+ * @package coderovich\clickhouse
  */
 class ActiveQuery extends Query implements ActiveQueryInterface
 {

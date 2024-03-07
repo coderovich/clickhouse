@@ -21,7 +21,7 @@ to the require section of your composer.json
 ```php  
    'components' => [
         'clickhouse' => [
-            'class' => 'kak\clickhouse\Connection',
+            'class' => 'coderovich\clickhouse\Connection',
             'dsn' => '127.0.0.1',
             'port' => '8123',
            // 'database' => 'default',  // use other database name
@@ -40,7 +40,7 @@ to the require section of your composer.json
 ## Usage
 ```php    
 
-   /** @var \kak\clickhouse\Connection $client */
+   /** @var \coderovich\clickhouse\Connection $client */
     $client = \Yii::$app->clickhouse;
     $sql = 'select * from stat where counter_id=:counter_id';
     $client->createCommand($sql, [
@@ -60,7 +60,7 @@ to the require section of your composer.json
 batch insert files
  
 ```php
-    /** @var \kak\clickhouse\Connection $clickhouse */
+    /** @var \coderovich\clickhouse\Connection $clickhouse */
     $clickhouse = \Yii::$app->clickhouse;
 
     $files = [
@@ -81,7 +81,7 @@ batch insert files
 ```
 batch insert files,  batch size = 100 lines
 ```php
-    /** @var \kak\clickhouse\Connection $clickhouse */
+    /** @var \coderovich\clickhouse\Connection $clickhouse */
     $clickhouse = \Yii::$app->clickhouse;
 
     $responses = $clickhouse->createCommand(null)
@@ -106,7 +106,7 @@ old methods: meta, rows, countAll, statistics
         LIMIT 10
     '; 	
 
-    /** @var \kak\clickhouse\Connection $clickhouse */
+    /** @var \coderovich\clickhouse\Connection $clickhouse */
     $clickhouse = \Yii::$app->clickhouse;
     
     $command = $clickhouse->createCommand($sql);  	
@@ -129,7 +129,7 @@ old methods: meta, rows, countAll, statistics
 ```
 old examples ORM
 ```php
-use kak\clickhouse\Query;
+use coderovich\clickhouse\Query;
 
 $q = (new Query())
     ->from('stat')
@@ -160,7 +160,7 @@ var_dump($command->getTotals());
 [Group With Modifiers](https://clickhouse.com/docs/en/sql-reference/statements/select/group-by)
 ```php
 
-use kak\clickhouse\Query;
+use coderovich\clickhouse\Query;
 
 $command = (new Query());
 // ...
@@ -173,7 +173,7 @@ $command->withRollup();
 
 Set specific options 
 ```php
-  /** @var \kak\clickhouse\Connection $client */
+  /** @var \coderovich\clickhouse\Connection $client */
     $client = \Yii::$app->clickhouse;
     $sql = 'select * from stat where counter_id=:counter_id';
     $client->createCommand($sql, [
@@ -188,7 +188,7 @@ Set specific options
 
 [Select with](https://clickhouse.com/docs/en/sql-reference/statements/select/with/)
 ```php
-    use kak\clickhouse\Query;
+    use coderovich\clickhouse\Query;
     // ...
 
     $db = \Yii::$app->clickhouse;
@@ -217,7 +217,7 @@ class Stat extends Model
 
     public function save($validate = true)
     {
-        /** @var \kak\clickhouse\Connection $client */
+        /** @var \coderovich\clickhouse\Connection $client */
         $client = \Yii::$app->clickhouse;
         $this->event_date = date('Y-m-d');
 
@@ -238,7 +238,7 @@ class Stat extends Model
 ## ActiveRecord model
 
 ```php
-use kak\clickhouse\ActiveRecord;
+use coderovich\clickhouse\ActiveRecord;
 use app\models\User;
 
 class Stat extends ActiveRecord
@@ -282,7 +282,7 @@ return [
             ],
             'generators' => [
                 'clickhouseDbModel' => [
-                    'class' => 'kak\clickhouse\gii\model\Generator'
+                    'class' => 'coderovich\clickhouse\gii\model\Generator'
                 ]
             ],
         ],
@@ -304,7 +304,7 @@ $config['bootstrap'][] = 'debug';
         ],
         'panels' => [
             'clickhouse' => [
-                'class' => 'kak\clickhouse\debug\Panel',
+                'class' => 'coderovich\clickhouse\debug\Panel',
                 'db' => 'clickhouse'
             ],
         ]
@@ -316,7 +316,7 @@ Using SqlDataProvider
 =====================
 ```php
 $sql = 'select * from stat where counter_id=:counter_id and event_date=:date';
-$provider = new \kak\clickhouse\data\SqlDataProvider([
+$provider = new \coderovich\clickhouse\data\SqlDataProvider([
     'db' => 'clickhouse',
     'sql' => $sql,
     'params' => [
@@ -335,7 +335,7 @@ create custom console controller
     // ...
     public function actionIndex()
     {
-        $exportSchemaCommand = new \kak\clickhouse\console\MigrationSchemaCommand([
+        $exportSchemaCommand = new \coderovich\clickhouse\console\MigrationSchemaCommand([
             'sourceTable' => 'stat',
             'sourceDb' => \Yii::$app->db,
             'excludeSourceColumns' => [
@@ -356,7 +356,7 @@ create custom console controller
   // ...
     public function actionIndex()
     {
-        $exportDataCommand = new \kak\clickhouse\console\MigrationDataCommand([
+        $exportDataCommand = new \coderovich\clickhouse\console\MigrationDataCommand([
             'sourceQuery' => (new Query())->select('*')->from('stat'),
             'sourceDb' => \Yii::$app->db,
             'storeTable' => 'test_stat',
@@ -429,7 +429,7 @@ Run tests
 <?php
 
 return [
-    'class' => 'kak\clickhouse\Connection',
+    'class' => 'coderovich\clickhouse\Connection',
     'dsn' => '127.0.0.1',
     'port' => '8123',
     'username' => 'web',

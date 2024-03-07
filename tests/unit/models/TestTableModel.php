@@ -1,7 +1,7 @@
 <?php
-namespace kak\clickhouse\tests\unit\models;
+namespace coderovich\clickhouse\tests\unit\models;
 
-use kak\clickhouse\ActiveRecord;
+use coderovich\clickhouse\ActiveRecord;
 
 /**
  * Class TestTableModel
@@ -25,7 +25,7 @@ class TestTableModel extends ActiveRecord
     }
 
     /**
-     * @return \kak\clickhouse\Connection;
+     * @return \coderovich\clickhouse\Connection;
      */
     public static function getDb()
     {

@@ -38,19 +38,19 @@ class Connection extends \yii\db\Connection
     /**
      * @var string
      */
-    public $commandClass = 'kak\clickhouse\Command';
-    public $schemaClass = 'kak\clickhouse\Schema';
+    public $commandClass = 'coderovich\clickhouse\Command';
+    public $schemaClass = 'coderovich\clickhouse\Schema';
     public $transportClass = 'yii\httpclient\CurlTransport';
 
     /**
      * @var array
      */
     public $requestConfig = [
-        'class' => 'kak\clickhouse\httpclient\Request',
+        'class' => 'coderovich\clickhouse\httpclient\Request',
     ];
 
     public $schemaMap = [
-        'clickhouse' => 'kak\clickhouse\Schema'
+        'clickhouse' => 'coderovich\clickhouse\Schema'
     ];
 
 
@@ -86,14 +86,14 @@ class Connection extends \yii\db\Connection
     /**
      * @param $sql
      * @param array $params
-     * @return \kak\clickhouse\Command
+     * @return \coderovich\clickhouse\Command
      */
     public function createCommand($sql = null, $params = [])
     {
         $this->open();
         \Yii::trace("Executing ClickHouse: {$sql}", __METHOD__);
 
-        /** @var $command \kak\clickhouse\Command */
+        /** @var $command \coderovich\clickhouse\Command */
         $command = new $this->commandClass([
             'db' => $this,
             'sql' => $sql,
@@ -250,7 +250,7 @@ class Connection extends \yii\db\Connection
     }
 
     /**
-     * @return object|\kak\clickhouse\Schema
+     * @return object|\coderovich\clickhouse\Schema
      * @throws \yii\base\InvalidConfigException
      */
     public function getSchema()

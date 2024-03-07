@@ -21,7 +21,7 @@ use yii\base\BaseObject;
  * ```
  *
  * Class BatchQueryResult
- * @package kak\clickhouse
+ * @package coderovich\clickhouse
  */
 class BatchQueryResult  extends BaseObject implements \Iterator
 {

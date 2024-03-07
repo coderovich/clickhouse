@@ -234,6 +234,6 @@ class Schema extends \yii\db\Schema
      */
     protected function createColumnSchema()
     {
-        return Yii::createObject('kak\clickhouse\ColumnSchema');
+        return Yii::createObject('coderovich\clickhouse\ColumnSchema');
     }
 }

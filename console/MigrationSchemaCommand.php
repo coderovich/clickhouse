@@ -5,8 +5,8 @@
  * Date: 09.05.2017
  * Time: 12:59
  */
-namespace kak\clickhouse\console;
-use kak\clickhouse\Schema;
+namespace coderovich\clickhouse\console;
+use coderovich\clickhouse\Schema;
 use yii\base\BaseObject;
 use Yii;
 
@@ -27,7 +27,7 @@ class MigrationSchemaCommand extends BaseObject
     public $excludeSourceColumns = [
         'id'
     ];
-    /** @var \kak\clickhouse\Connection */
+    /** @var \coderovich\clickhouse\Connection */
     public $storeDb;
 
     public function init()

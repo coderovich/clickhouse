@@ -1,9 +1,9 @@
 <?php
-namespace kak\clickhouse\httpclient;
+namespace coderovich\clickhouse\httpclient;
 
 /**
  * Class Request
- * @package kak\clickhouse\httpclient
+ * @package coderovich\clickhouse\httpclient
  * tmp FIX
  */
 class Request extends \yii\httpclient\Request

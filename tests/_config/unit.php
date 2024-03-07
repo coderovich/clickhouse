@@ -1,5 +1,5 @@
 <?php
-use kak\clickhouse\Connection as ClickhouseConnection;
+use coderovich\clickhouse\Connection as ClickhouseConnection;
 
 return [
     'id' => 'test-clickhouse-console',

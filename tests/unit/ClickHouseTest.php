@@ -1,12 +1,12 @@
 <?php
 
-namespace kak\clickhouse\tests\unit;
+namespace coderovich\clickhouse\tests\unit;
 
 use Codeception\Test\Unit;
 use Exception;
-use kak\clickhouse\tests\unit\models\TestTableModel;
+use coderovich\clickhouse\tests\unit\models\TestTableModel;
 
-use kak\clickhouse\{
+use coderovich\clickhouse\{
     ActiveRecord,
     Query,
     Expression
@@ -17,7 +17,7 @@ use Yii;
 
 /**
  * Class ClickHouseTest
- * @package kak\clickhouse\tests\unit
+ * @package coderovich\clickhouse\tests\unit
  */
 class ClickHouseTest extends Unit
 {
@@ -93,7 +93,7 @@ class ClickHouseTest extends Unit
     }
 
     /**
-     * @return \kak\clickhouse\Connection
+     * @return \coderovich\clickhouse\Connection
      */
     protected function getDb()
     {

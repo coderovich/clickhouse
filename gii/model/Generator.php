@@ -1,5 +1,5 @@
 <?php
-namespace kak\clickhouse\gii\model;
+namespace coderovich\clickhouse\gii\model;
 /**
  * Created by PhpStorm.
  * User: PHPdev
@@ -7,12 +7,12 @@ namespace kak\clickhouse\gii\model;
  * Time: 14:58
  */
 
-use kak\clickhouse\Schema;
+use coderovich\clickhouse\Schema;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\helpers\ArrayHelper;
-use kak\clickhouse\ActiveRecord;
-use kak\clickhouse\Connection;
+use coderovich\clickhouse\ActiveRecord;
+use coderovich\clickhouse\Connection;
 use yii\gii\CodeFile;
 use yii\helpers\Inflector;
 
@@ -24,7 +24,7 @@ class Generator extends \yii\gii\Generator
     public $collectionName;
     public $modelClass;
     public $generateLabelsFromComments = false;
-    public $baseClass = 'kak\clickhouse\ActiveRecord';
+    public $baseClass = 'coderovich\clickhouse\ActiveRecord';
 
     /**
      * @return string name of the code generator
@@ -151,7 +151,7 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Generates the attribute labels for the specified table.
-     * @param \kak\clickhouse\TableSchema $table the table schema
+     * @param \coderovich\clickhouse\TableSchema $table the table schema
      * @return array the generated attribute labels (name => label)
      */
     public function generateLabels($table)
@@ -175,7 +175,7 @@ class Generator extends \yii\gii\Generator
 
     /**
      * Generates validation rules for the specified table.
-     * @param \kak\clickhouse\TableSchema $table the table schema
+     * @param \coderovich\clickhouse\TableSchema $table the table schema
      * @return array the generated validation rules
      */
     public function generateRules($table)

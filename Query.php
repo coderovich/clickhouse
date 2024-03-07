@@ -12,7 +12,7 @@ use yii\db\Exception as DbException;
 
 /**
  * Class Query
- * @package kak\clickhouse
+ * @package coderovich\clickhouse
  * @method getCountAll() int
  * @method getTotals() array
  * @method getData() array
@@ -23,7 +23,7 @@ use yii\db\Exception as DbException;
 class Query extends BaseQuery
 {
 
-    /** @var \kak\clickhouse\Command|null  */
+    /** @var \coderovich\clickhouse\Command|null  */
     private $_command;
     /** @var bool  */
     /** @depends-annotations this prop will be removed in 1.3.0 */
@@ -39,9 +39,9 @@ class Query extends BaseQuery
 
     /**
      * Creates a DB command that can be used to execute this query.
-     * @param \kak\clickhouse\Connection $db the database connection used to generate the SQL statement.
+     * @param \coderovich\clickhouse\Connection $db the database connection used to generate the SQL statement.
      * If this parameter is not given, the `db` application component will be used.
-     * @return \kak\clickhouse\Command the created DB command instance.
+     * @return \coderovich\clickhouse\Command the created DB command instance.
      */
     public function createCommand($db = null)
     {

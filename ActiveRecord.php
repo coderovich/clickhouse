@@ -17,7 +17,7 @@ class ActiveRecord extends \yii\db\ActiveRecord
 
     /**
      * @inheritdoc
-     * @return \kak\clickhouse\ActiveQuery the newly created [[\kak\clickhouse\ActiveQuery]] instance.
+     * @return \coderovich\clickhouse\ActiveQuery the newly created [[\coderovich\clickhouse\ActiveQuery]] instance.
      */
     public static function find()
     {

@@ -1,5 +1,5 @@
 <?php
-namespace kak\clickhouse\debug;
+namespace coderovich\clickhouse\debug;
 
 use yii\log\Logger;
 
@@ -19,7 +19,7 @@ class Panel extends \yii\debug\panels\DbPanel
     {
         parent::init();
         /*$this->actions['db-explain'] = [
-            'class' => 'kak\\clickhouse\\debug\\ExplainAction',
+            'class' => 'coderovich\\clickhouse\\debug\\ExplainAction',
             'panel' => $this,
         ];*/
 
@@ -46,7 +46,7 @@ class Panel extends \yii\debug\panels\DbPanel
     {
         $target = $this->module->logTarget;
         return $target->filterMessages($target->messages, Logger::LEVEL_PROFILE, [
-            'kak\clickhouse\Command::*',
+            'coderovich\clickhouse\Command::*',
         ]);
     }
 }

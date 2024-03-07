@@ -6,10 +6,10 @@
  * Time: 12:25
  */
 
-namespace kak\clickhouse\console;
+namespace coderovich\clickhouse\console;
 
-use kak\clickhouse\ColumnSchema;
-use kak\clickhouse\TableSchema;
+use coderovich\clickhouse\ColumnSchema;
+use coderovich\clickhouse\TableSchema;
 use yii\base\BaseObject;
 use Yii;
 
@@ -19,7 +19,7 @@ use yii\helpers\VarDumper;
 
 /**
  * Class MigrationDataCommand
- * @package kak\clickhouse\console
+ * @package coderovich\clickhouse\console
  */
 class MigrationDataCommand extends BaseObject
 {
@@ -36,7 +36,7 @@ class MigrationDataCommand extends BaseObject
     public $sourceRowExpandData = false;
     /** @var string table name to save data */
     public $storeTable;
-    /** @var \kak\clickhouse\Connection */
+    /** @var \coderovich\clickhouse\Connection */
     public $storeDb;
     /** @var int size data and step export data */
     public $batchSize = 10000;
