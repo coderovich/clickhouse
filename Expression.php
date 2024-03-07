@@ -1,7 +1,7 @@
 <?php
 
 
-namespace kak\clickhouse;
+namespace coderovich\clickhouse;
 
 /**
  * Class Expression

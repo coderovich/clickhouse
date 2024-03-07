@@ -1,5 +1,5 @@
 <?php
-namespace kak\clickhouse;
+namespace coderovich\clickhouse;
 
 
 class TableSchema extends \yii\db\TableSchema

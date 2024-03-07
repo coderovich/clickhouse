@@ -1,6 +1,6 @@
 <?php
 
-namespace kak\clickhouse;
+namespace coderovich\clickhouse;
 
 use kak\clickhouse\httpclient\Request;
 use Yii;

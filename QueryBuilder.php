@@ -1,5 +1,5 @@
 <?php
-namespace kak\clickhouse;
+namespace coderovich\clickhouse;
 
 use yii\db\Expression;
 use yii\db\ExpressionInterface;

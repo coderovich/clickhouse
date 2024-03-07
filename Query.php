@@ -5,7 +5,7 @@
  * Date: 03.05.2017
  * Time: 11:53
  */
-namespace kak\clickhouse;
+namespace coderovich\clickhouse;
 
 use yii\db\Query as BaseQuery;
 use yii\db\Exception as DbException;

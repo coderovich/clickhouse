@@ -1,5 +1,5 @@
 <?php
-namespace kak\clickhouse;
+namespace coderovich\clickhouse;
 use yii\base\InvalidConfigException;
 use yii\db\ActiveQueryInterface;
 use yii\db\ActiveQueryTrait;

@@ -5,7 +5,7 @@
  */
 
 
-namespace kak\clickhouse;
+namespace coderovich\clickhouse;
 
 
 use yii\db\ColumnSchemaBuilder as BaseColumnSchemaBuilder;
